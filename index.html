@@ -15,12 +15,30 @@
       <header>
         <h1>Dictionary</h1>
         <div class="search-cont">
-          <input type="text" placeholder="Start typing any word or phrase" />
+          <input
+            id="text-inpt"
+            type="text"
+            placeholder="Start typing any word or phrase"
+          />
           <button id="search-btn">
             <i class="fa-solid fa-magnifying-glass" style="color: #000000"></i>
           </button>
         </div>
       </header>
+
+      <div class="content">
+        <div class="language-cont">
+          <button id="American" class="language">American</button>
+          <button id="British" class="language">British</button>
+        </div>
+        <div class="word-cont">
+          <h2 id="searched-word">Hello</h2>
+        </div>
+        <ol>
+          <li>a call used to attract attention</li>
+          <li>an expression of surprise</li>
+        </ol>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

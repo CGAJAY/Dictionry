@@ -7,7 +7,8 @@
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: aquamarine;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
 }
 h1 {
   text-align: center;
@@ -46,6 +47,40 @@ input[type="text"]::placeholder {
 }
 #search-btn:hover {
   background-color: rgb(49, 158, 248);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+  margin-top: 30px;
+  /* background-color: beige; */
+}
+.language-cont {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 40px;
+}
+.language {
+  font-size: 20px;
+  padding: 15px 40px;
+  background-color: #d1e5ff;
+  border: none;
+  border-radius: 10px;
+}
+.active {
+  border-radius: 10px;
+  border: none;
+  padding: 15px 40px;
+  background-color: #004097;
+  color: white;
+}
+.word-cont {
+  margin: 20px 50px;
+  font-size: 30px;
+}
+ol {
+  margin-left: 50px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
