@@ -79,6 +79,12 @@ input[type="text"]::placeholder {
   margin: 20px 50px;
   font-size: 30px;
 }
+.italic {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  color: gray;
+}
 ol {
   margin-left: 50px;
 }

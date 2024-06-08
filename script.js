@@ -5,6 +5,9 @@ const contentCont = document.querySelector(".content");
 const wordContDiv = document.createElement("div");
 wordContDiv.classList.add("word-cont");
 const searchedWord = document.createElement("h2");
+const wordGreek = document.createElement("p");
+wordGreek.classList.add("italic");
+const languageCont = document.querySelector(".language-cont");
 
 function findMeaning() {
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${textInput.value}`)
@@ -14,7 +17,13 @@ function findMeaning() {
     .then((data) => {
       searchedWord.textContent = textInput.value;
       wordContDiv.appendChild(searchedWord);
-      contentCont.appendChild(wordContDiv);
+      wordGreek.textContent = `${data[0].phonetic}`;
+      wordContDiv.appendChild(wordGreek);
+      contentCont.insertBefore(
+        wordContDiv,
+        contentCont.firstElementChild.nextSibling
+      );
+      console.log(data);
     });
 }
 
