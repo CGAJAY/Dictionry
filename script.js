@@ -1,5 +1,4 @@
 let textInput = document.getElementById("text-inpt");
-// textInput.value = "mind";
 const searchBtn = document.getElementById("search-btn");
 const contentCont = document.querySelector(".content");
 const wordContDiv = document.createElement("div");
@@ -17,24 +16,24 @@ async function findMeaning() {
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${textInput.value}`
     );
-    contentCont.textContent = "";
     const data = await response.json();
+
+    console.log(data);
+    contentCont.textContent = "";
     searchedWord.textContent = textInput.value;
+    textInput.value = "";
     wordContDiv.appendChild(searchedWord);
     wordGreek.textContent = `${data[0].phonetic}`;
     wordContDiv.appendChild(wordGreek);
     contentCont.appendChild(wordContDiv);
     wordType.textContent = `${data[0].meanings[0].partOfSpeech}`;
     contentCont.appendChild(wordType);
-    console.log(data[0]);
-    //   console.log(data[0].meanings[0]);
-    //   console.log(data[0].meanings[0].definitions);
     data[0].meanings[0].definitions.forEach((define) => {
-      console.log(define);
       MeaningList.innerHTML += `<li>${define.definition}</li>`;
     });
     contentCont.appendChild(MeaningList);
   } catch (error) {
+    textInput.value = "";
     contentCont.textContent = "";
     let message = document.createElement("h2");
     message.textContent = `Input only english words`;
