@@ -8,7 +8,10 @@
   max-width: 1000px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
 }
 h1 {
   text-align: center;
@@ -53,6 +56,7 @@ input[type="text"]::placeholder {
   flex-direction: column;
   margin: 0 100px;
   margin-top: 30px;
+  padding: 0 50px;
   /* background-color: beige; */
 }
 .language-cont {
@@ -76,7 +80,7 @@ input[type="text"]::placeholder {
   color: white;
 }
 .word-cont {
-  margin: 20px 50px;
+  margin: 20px 0;
   font-size: 30px;
 }
 .italic {
@@ -84,9 +88,11 @@ input[type="text"]::placeholder {
   font-style: italic;
   font-weight: 100;
   color: gray;
+  font-size: 20px;
+  margin-left: 10px;
 }
-ol {
-  margin-left: 50px;
+ol li {
+  margin-top: 10px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
