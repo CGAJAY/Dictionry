@@ -17,6 +17,7 @@ async function findMeaning() {
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${textInput.value}`
     );
+    contentCont.textContent = "";
     const data = await response.json();
     searchedWord.textContent = textInput.value;
     wordContDiv.appendChild(searchedWord);
@@ -34,6 +35,7 @@ async function findMeaning() {
     });
     contentCont.appendChild(MeaningList);
   } catch (error) {
+    contentCont.textContent = "";
     let message = document.createElement("h2");
     message.textContent = `Input only english words`;
     contentCont.appendChild(message);
