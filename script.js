@@ -19,15 +19,21 @@ async function findMeaning() {
     const data = await response.json();
 
     console.log(data);
+    console.log(data[0].meanings[0].definitions);
     contentCont.textContent = "";
     searchedWord.textContent = textInput.value;
     textInput.value = "";
     wordContDiv.appendChild(searchedWord);
-    wordGreek.textContent = `${data[0].phonetic}`;
+    if (data[0].phonetic != undefined) {
+      wordGreek.textContent = `${data[0].phonetic}`;
+    } else {
+      wordGreek.textContent = "";
+    }
     wordContDiv.appendChild(wordGreek);
     contentCont.appendChild(wordContDiv);
     wordType.textContent = `${data[0].meanings[0].partOfSpeech}`;
     contentCont.appendChild(wordType);
+    MeaningList.innerHTML = "";
     data[0].meanings[0].definitions.forEach((define) => {
       MeaningList.innerHTML += `<li>${define.definition}</li>`;
     });
